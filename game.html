@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lyrical Mirror - Grand Heritage Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&family=Zeyada&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --vermillion: #b22222;
+            --ink-black: #010204;
+            --teal-glow: #2dd4bf;
+            --amber-gold: #c5a059;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            padding-bottom: 100px;
+        }
+
+        .writing-mode-vertical { writing-mode: vertical-rl; }
+        
+        .glass { 
+            background: rgba(255, 255, 255, 0.04); 
+            backdrop-filter: blur(25px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+        }
+
+        .glow-red { box-shadow: 0 0 30px rgba(185, 28, 28, 0.5); }
+        
+        .parchment-bg {
+            background-color: #fdf5e6;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'), 
+                              linear-gradient(180deg, rgba(253, 245, 230, 0.98) 0%, rgba(224, 234, 252, 0.3) 100%);
+        }
+
+        .midnight-scroll {
+            background-color: #0a0a0a;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-paper.png'), 
+                              linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .mountain-clip {
+            clip-path: polygon(0 100%, 0 65%, 12% 45%, 28% 60%, 48% 25%, 68% 55%, 82% 35%, 100% 70%, 100% 100%);
+        }
+
+        .winding-path-line::before {
+            content: '';
+            position: absolute;
+            top: 150px; left: 50%;
+            width: 4px; height: calc(100% - 300px);
+            background: linear-gradient(to bottom, transparent, rgba(197, 160, 89, 0.3) 10%, rgba(197, 160, 89, 0.3) 90%, transparent);
+            border-left: 2px dashed #c5a059;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%; height: 2px;
+            background: rgba(45, 212, 191, 0.6);
+            box-shadow: 0 0 15px #2dd4bf;
+            animation: scan 4s linear infinite;
+            z-index: 10;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        /* Increased spacing between posters as requested */
+        .poster-page {
+            width: 1000px;
+            margin: 150px auto; /* Added 70px more to the original 80px */
+            position: relative;
+        }
+
+        /* Fix for the cutting text - increased line height and container height */
+        .intro-title {
+            line-height: 1.1;
+            padding: 10px 0;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center">
+
+    <div class="poster-page h-[1500px] bg-[#05080a] overflow-hidden flex flex-col p-10 shadow-[0_0_100px_rgba(0,0,0,1)] border border-white/5">
+        <div class="absolute inset-0 opacity-40 pointer-events-none">
+            <img src="jicheng.jpg" class="w-full h-full object-cover blur-md scale-110" alt="bg">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#05080a] via-transparent to-[#05080a]"></div>
+        </div>
+
+        <nav class="relative z-10 flex justify-between items-center mb-16 border-b border-white/10 pb-6">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center font-black text-white text-2xl shadow-lg">S</div>
+                <div class="text-white">
+                    <div class="font-black text-xl tracking-tighter uppercase leading-none">The Lyrical Mirror</div>
+                    <div class="text-[10px] text-[#2dd4bf] font-bold tracking-[0.4em] uppercase opacity-80">Heritage Hub</div>
+                </div>
+            </div>
+            <div class="flex gap-8 text-[11px] font-black text-white/50 tracking-widest uppercase">
+                <span class="text-red-500 border-b-2 border-red-500 pb-1">Rules</span>
+                <span>Archive</span>
+                <span>Gallery</span>
+            </div>
+        </nav>
+
+        <div class="relative z-10 grid grid-cols-12 gap-8 mb-16">
+            <div class="col-span-9">
+                <div class="flex items-center gap-3 text-amber-500 mb-6">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <span class="text-white/40 text-[9px] font-bold tracking-[0.2em] ml-2 uppercase">Author and Designer: Shani Boh</span>
+                </div>
+                <h1 class="text-white text-[100px] font-black leading-[0.85] mb-8 tracking-tighter uppercase italic drop-shadow-2xl">
+                    GAME<br/><span class="text-red-600">GUIDE</span>
+                </h1>
+                <p class="text-white/80 text-lg leading-relaxed max-w-xl font-light border-l-4 border-[#2dd4bf] pl-8 italic">
+                    "Step into the garden. Become the self." Engage with 10 iconic figures through the Suit of Tears, Dreams, Exile, and Stillness.
+                </p>
+            </div>
+            <div class="col-span-3 flex flex-col justify-end items-end gap-6 relative">
+                <div class="writing-mode-vertical bg-red-700 text-white p-5 font-['Ma_Shan_Zheng'] text-3xl border-2 border-[#c5a059] shadow-2xl tracking-[10px] absolute top-[-60px] right-0">鏡中情遊戲</div>
+                <button class="bg-red-600 text-white w-full py-4 rounded-sm font-black text-lg glow-red flex items-center justify-center gap-3 tracking-tighter">
+                    <i data-lucide="play" class="w-5 h-5 fill-current"></i> INITIATE SESSION
+                </button>
+            </div>
+        </div>
+
+        <div class="relative z-10 flex flex-grow gap-10">
+            <div class="w-16 flex flex-col gap-4 items-center border-r border-white/5 pr-10" id="guide-thumbs">
+                </div>
+
+            <div class="flex-grow flex flex-col gap-8">
+                <div class="glass p-10 relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <h3 class="text-red-500 font-black text-3xl italic mb-1 uppercase tracking-tighter">MODE I: THE LYRICAL ACT</h3>
+                            <div class="text-white/40 text-[10px] font-black tracking-[0.4em] uppercase">Performance & Identity // 2-5 PAX</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 text-white/80 text-[11px]">
+                        <div class="bg-white/5 p-6 border-t-2 border-red-600">
+                            <strong class="text-red-500 block mb-2 text-base font-black uppercase tracking-tighter italic">01 Blind Draw</strong> 
+                            Shuffle heritage cards. Each sage takes one artifact blindly.
+                        </div>
+                        <div class="bg-white/5 p-6 border-t-2 border-red-600">
+                            <strong class="text-red-500 block mb-2 text-base font-black uppercase tracking-tighter italic">02 Reveal</strong> 
+                            Simultaneously flip all cards to face the heavens on count of three.
+                        </div>
+                        <div class="bg-white/5 p-6 border-t-2 border-red-600">
+                            <strong class="text-red-500 block mb-2 text-base font-black uppercase tracking-tighter italic">03 Challenge</strong> 
+                            Make others guess your identity via Action, Verse, or Persona.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-10 relative border-[#2dd4bf]/20">
+                    <h3 class="text-[#2dd4bf] font-black text-3xl italic mb-1 uppercase tracking-tighter">MODE II: SCHOLARS' PAVILION</h3>
+                    <div class="text-white/40 text-[10px] font-black tracking-[0.4em] mb-8 uppercase">Empathy & Philosophy // 2-10 PAX</div>
+                    <div class="space-y-6 text-white/80">
+                        <div class="flex gap-6 items-center"><div class="w-10 h-10 rounded-full border border-[#2dd4bf] flex items-center justify-center text-[#2dd4bf] font-black">1</div><div class="text-sm"><span class="text-[#2dd4bf] font-bold uppercase tracking-widest italic mr-2">Resonance:</span> Select a spirit that mirrors your current internal garden.</div></div>
+                        <div class="flex gap-6 items-center"><div class="w-10 h-10 rounded-full border border-[#2dd4bf] flex items-center justify-center text-[#2dd4bf] font-black">2</div><div class="text-sm"><span class="text-[#2dd4bf] font-bold uppercase tracking-widest italic mr-2">Discourse:</span> "Become" the character. Share legend, resonance, and critique.</div></div>
+                        <div class="flex gap-6 items-center"><div class="w-10 h-10 rounded-full border border-[#2dd4bf] flex items-center justify-center text-[#2dd4bf] font-black">3</div><div class="text-sm"><span class="text-[#2dd4bf] font-bold uppercase tracking-widest italic mr-2">The Path:</span> Propose an alternate destiny for the character's soul.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="character-intros" class="flex flex-col items-center w-full">
+        </div>
+
+    <div class="w-[1200px] midnight-scroll shadow-[0_0_100px_rgba(0,0,0,1)] relative overflow-hidden border-x-[40px] border-zinc-900 flex flex-col py-24 px-16 mb-32">
+        <div class="absolute inset-0 pointer-events-none opacity-40">
+           <div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-zinc-800 to-transparent mountain-clip blur-[3px]"></div>
+           <div class="absolute top-[10%] left-10 text-[300px] font-['Ma_Shan_Zheng'] text-white/5">竹</div>
+           <div class="absolute bottom-[20%] right-[-50px] text-[350px] font-['Ma_Shan_Zheng'] text-white/5">影</div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center winding-path-line">
+            <header class="text-center mb-32 relative">
+                <div class="absolute top-[-30px] left-[-180px] writing-mode-vertical bg-red-700 text-white p-5 font-['Ma_Shan_Zheng'] text-3xl border-2 border-[#c5a059] shadow-2xl tracking-[8px]">人物 · 千載相逢</div>
+                <h1 class="text-[120px] font-black text-white leading-none tracking-tighter mb-4 font-['Noto_Serif_SC'] drop-shadow-2xl uppercase">Heritage Scroll</h1>
+                <p class="text-2xl tracking-[1em] text-zinc-400 font-bold uppercase opacity-80">The Ten Legendary Landscapes</p>
+                <div class="h-1.5 w-40 bg-amber-500 mx-auto mt-10 shadow-[0_0_10px_orange]"></div>
+            </header>
+
+            <div id="gallery-content" class="flex flex-col gap-48 w-full max-w-5xl">
+                </div>
+
+            <footer class="mt-48 text-center border-t-4 border-double border-zinc-700 pt-20 w-full">
+                <div class="font-['Ma_Shan_Zheng'] text-red-700 text-7xl mb-10 opacity-90 drop-shadow-[0_0_20px_rgba(255,0,0,0.3)]">萬古情心</div>
+                <h4 class="text-6xl font-black text-white tracking-tighter mb-6 uppercase font-['Noto_Serif_SC']">Mirroring History</h4>
+                <p class="text-3xl text-zinc-400 italic font-light font-['Noto_Serif_SC']">Discover the lyrical soul within the stone.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const characters = [
+            { 
+                name: 'LIN DAIYU', cn: '林黛玉', role: 'The Fragile Rebel', suit: 'Tears', img: 'lindaiyu.jpg',
+                traits: ['Flower Burial Hoe', 'Misted Jade Palette', 'Active Agency'],
+                quote: '尔今死去侬收葬，未卜侬身何日丧？',
+                desc: 'I am Lin Daiyu. This artifact captures my iconic "Burying of the Flowers." In this misted, pale jade lyrical space, I project my active agency onto a world that considers me only fragile. This act is not mere mourning; it is my choice to create a pure, poetic grave for beauty itself, ensuring it remains undefiled by the world’s corruption. My intense interiority is mirrored in the large negative space around me. I ask: "I bury you today, but who will bury me?" My fragility is my rebellion, a choice to live and die by my own poetic truth.'
+            },
+            { 
+                name: 'DU LINIANG', cn: '杜麗娘', role: 'The Dreamer', suit: 'Dreams', img: 'duliniang.jpg',
+                traits: ['Neo-Ming Aesthetic', 'Moonlit fog', 'Passionate Hanfu'],
+                quote: '情不知所起，一往而深',
+                desc: 'I am Du Liniang. I exist within this dark, moonlit garden—my ultimate lyrical space. My vibrant hanfu glows with hidden passion, or "Qing," symbolizing a desire that transcends physical constraints. These oversized, glowing peonies are the hotspots of my heart; they trigger the voice of my dreaming soul. In this trance-like state, I find a freedom that waking reality denies me. As I always say, "Love started I know not when, but it has grown deep." My rebellion is the dream logic itself, proving that the heart is true.'
+            },
+            { 
+                name: 'ANONYMOUS', cn: '無名氏', role: 'The Voice of Longing', suit: 'Longing', img: 'anonymouswoman.jpg',
+                traits: ['Xieyi Ink-wash', 'Liubai', 'Xing (Stimulus)'],
+                quote: '青青河畔草，郁郁园中柳',
+                desc: 'I am the Voice of Longing. I represent the universal lyrical voice of self-reflection from the Nineteen Old Poems. My world is a minimalist, monochrome ink-wash, where vast empty space emphasizes my solitude. You see me facing away on this sparse riverbank; I am not defined by a personal name or history, but by shared fragments of distance and time. These weeping willows are my "Xing 兴"—the stimulus for an internal melancholy that belongs to everyone. I am a nameless vessel for the human heart\'s oldest echoes and silent distance.'
+            },
+            { 
+                name: 'QU YUAN', cn: '屈原', role: 'The Exiled Spirit', suit: 'Exile', img: 'quyuan.jpg',
+                traits: ['Miluo River', 'Bi (Metaphor)', 'Fragrant Orchids'],
+                quote: '举世皆浊我独清，众人皆醉我独醒',
+                desc: 'I am Qu Yuan, the Tragic Sage. I exist in constant conflict with an unprincipled world. This river landscape mirrors my turbulent exile, yet I remain unpolluted. I use fragrant orchids and magnolias as "Bi 比"—metaphors for my uncorrupted virtue. I am not a hermit by choice; I am a minister forced into this lyrical space by my own integrity. I would rather my body be dissolved in the Miluo river than live a life with a defiled conscience. I remain the one who stays awake while the world sleeps, guarding the spirit.'
+            },
+            { 
+                name: 'WANG WEI', cn: '王維', role: 'The Invisible Self', suit: 'Stillness', img: 'wangwei.jpg',
+                traits: ['Contemplation', 'Xieyi Aesthetic', 'Spiritual Void'],
+                quote: '行到水窮處，坐看雲起時',
+                desc: 'I am Wang Wei. My lyrical space is the open, quiet mountain where the self dissolves into the landscape. Utilizing the minimalist "Xieyi" aesthetic, I signify absolute "Stillness." Seated in simple robes upon a worn rock, I gaze into still streams, finding peace in the spiritual void. The large negative space represents both the unpopulated mountain and my internal clarity. I walk until the water’s end, then sit and watch the clouds arise. I am a scholar-monk of the dawn; my boundary has faded into nature.'
+            },
+            { 
+                name: 'TAO YUANMING', cn: '陶淵明', role: 'The Master of Eremitism', suit: 'Authenticity', img: 'taoyuanming.jpg',
+                traits: ['Eastern Hedge', 'Southern Hills', 'Personal Clarity'],
+                quote: '采菊东篱下，悠然见南山',
+                desc: 'I am Tao Yuanming, the master of eremitism. I rejected public office for the authentic joy of a simple, self-sufficient life. My garden is a paradise I actively created to map my lyrical self onto the rural landscape. I use "Xing 兴"—the stimulus of a solitary chrysanthemum or the distant southern hills—to trigger my philosophical clarity. In this unpretentious rural beauty, I find my true worth. While picking flowers beneath the eastern hedge, I leisurely see the mountains and realize that in nature’s simplicity, the soul finally finds home.'
+            },
+            { 
+                name: 'TANG XIANZU', cn: '湯顯祖', role: 'The Dream Architect', suit: 'Architecture', img: 'tangxianzu.jpg',
+                traits: ['Literati Aesthetic', 'Dream-Clouds', 'Constructed Qing'],
+                quote: '夢中之情，何必非真',
+                desc: 'I am Tang Xianzu, the Dream Architect. My lyrical space is the quiet study, where I intellectually construct raw passion into a literary "dream." From my inkstone arise translucent clouds of vermillion and gold—a structured vision of desire that mirrors the winding path of the soul. Within these clouds, my characters emerge as symbols of the lyrical self. I believe in the cognitive truth of art over the tangible world. As I have written, "The passion in a dream—why must it be considered unreal?" I bridge the gap between scholarly logic and the heart.'
+            },
+            { 
+                name: 'CAO XUEQIN', cn: '曹雪芹', role: 'The Chronicler', suit: 'Nostalgia', img: 'caoxueqin.jpg',
+                traits: ['Grand View Ruins', 'Broken Jade', 'Memory-Illusions'],
+                quote: '滿紙荒唐言，一把辛酸淚',
+                desc: 'I am Cao Xueqin, chronicler of vanished splendor. I map nostalgia onto this decaying landscape of overgrown ruins, representing the fall of the house of Jia. My lyrical self exists between objective loss and the phantoms of memory. My world is a blend of muted ink and faint "Gongbi" hotspots—fragments of a broken jade and a garden that no longer exists. I map my personal suffering onto a massive, complex illusion. This is a page full of fantastic words, written with a handful of bitter tears, preserving glory turned to dust.'
+            },
+            { 
+                name: 'JI CHENG', cn: '計成', role: 'The Master Designer', suit: 'Paths', img: 'jicheng.jpg',
+                traits: ['Yuan Ye Blueprint', 'Spatial Flow', 'Bridge & Corridor'],
+                quote: '雖由人作，宛自天開',
+                desc: 'I am Ji Cheng, the Master of Winding Paths. As the author of "The Craft of Gardens," I provide the architectural blueprint for spaces where your lyrical self finds reflection. My aesthetic merges meticulous fine-line detail with glowing light. My gardens are structured compositions of corridors and bridges designed to illustrate emotional flow. This is not an illusion, but a physical philosophy of space. I believe that though a garden is made by human hands, it must appear as if it were opened by nature itself. I design the path; you find the mirror.'
+            },
+            { 
+                name: 'SONG YU', cn: '宋玉', role: 'Architect of Desire', suit: 'Illusion', img: 'songyu.jpg',
+                traits: ['Mount Wu Mist', 'Divine Goddess', 'Fleeting Rain'],
+                quote: '旦為朝雲，暮為行雨',
+                desc: 'I am Song Yu, the Architect of Desire. I navigate the intersection where human longing encounters divine mystery. Standing on the terraces of Mount Wu, I witness the goddess fading into clouds—the "morning clouds and evening rain." This unique environment visualizes the fleeting enchantment of the soul. I surround myself with fragrant orchids to represent refined sensibility and uncorrupted virtue, a legacy of integrity I carry forward. My rhapsodies capture the divine encounter that can never truly be possessed. I am the archetype of recording the moment.'
+            }
+        ];
+
+        // 1. Generate Guide Sidebar
+        const thumbContainer = document.getElementById('guide-thumbs');
+        characters.forEach((char, i) => {
+            const div = document.createElement('div');
+            div.className = `group relative cursor-pointer`;
+            div.innerHTML = `
+                <div class="w-12 h-12 rounded-full p-[1px] border-2 transition-all duration-300 ${i === 0 ? 'border-red-500 scale-110' : 'border-white/20 opacity-40 group-hover:opacity-100'}">
+                    <img src="${char.img}" class="w-full h-full object-cover rounded-full" alt="thumb" onerror="this.src='https://via.placeholder.com/100?text=IMG'">
+                </div>
+            `;
+            thumbContainer.appendChild(div);
+        });
+
+        // 2. Generate Individual Posters
+        const introContainer = document.getElementById('character-intros');
+        characters.forEach((char, i) => {
+            const poster = document.createElement('div');
+            poster.className = "poster-page h-[1800px] bg-[#080b0e] overflow-hidden flex flex-col items-center justify-center p-16 shadow-[0_0_150px_rgba(0,0,0,1)] border border-white/5";
+            poster.innerHTML = `
+                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                    <img src="${char.img}" class="w-full h-full object-cover blur-3xl scale-125">
+                </div>
+                <div class="absolute top-10 w-full px-16 flex justify-between items-center text-[9px] font-black tracking-[0.5em] text-[#2dd4bf] uppercase">
+                    <span>Now Live // Heritage_Archive</span>
+                    <span>Status: Unlocked</span>
+                </div>
+                <div class="relative z-10 text-center mb-12 intro-title">
+                    <h2 class="text-white text-[80px] font-black italic tracking-tighter leading-[0.9] mb-4 drop-shadow-[0_10px_30px_rgba(0,0,0,1)]">
+                        INTRODUCING <br/><span class="text-[#2dd4bf]">NEW CHARACTER</span>
+                    </h2>
+                    <div class="w-24 h-[2px] bg-[#2dd4bf] mx-auto mb-6 shadow-[0_0_15px_#2dd4bf]"></div>
+                    <p class="text-white/50 max-w-lg mx-auto text-[10px] font-black leading-relaxed tracking-[0.3em] uppercase">
+                        ${char.role} — A legacy emerges from the past.
+                    </p>
+                </div>
+                <div class="relative z-10 w-full flex flex-col items-center mb-20">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-[#2dd4bf]/15 blur-2xl opacity-50"></div>
+                        <div class="w-[550px] h-[750px] bg-white p-5 shadow-[0_40px_100px_rgba(0,0,0,0.5)] relative border border-white/10">
+                            <div class="scan-line"></div>
+                            <img src="${char.img}" class="w-full h-full object-cover" alt="${char.name}" onerror="this.src='https://via.placeholder.com/600x800?text=CHAR_IMG'">
+                            ${char.traits.map((trait, index) => `
+                                <div class="absolute flex items-center gap-6 ${index === 0 ? 'top-1/4 -left-28' : index === 1 ? 'top-1/2 -right-28' : 'bottom-1/4 -left-28'}">
+                                    <div class="${index === 1 ? 'order-last text-left' : 'text-right'}">
+                                        <div class="text-[#2dd4bf] text-[9px] font-black tracking-widest mb-1 uppercase">${trait}</div>
+                                        <div class="w-28 h-[1px] bg-[#2dd4bf] relative"><div class="absolute w-2 h-2 bg-[#2dd4bf] rounded-full top-[-3.5px] ${index === 1 ? 'left-0' : 'right-0'}"></div></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div class="relative z-10 w-full max-w-4xl grid grid-cols-12 gap-16">
+                    <div class="col-span-7">
+                        <h3 class="text-[#2dd4bf] font-black text-xs tracking-[0.4em] mb-6 uppercase flex items-center gap-4"><i data-lucide="info" class="w-4 h-4"></i> Persona Intro</h3>
+                        <div class="text-white text-2xl leading-[1.6] font-light font-['Noto_Serif_SC'] mb-8 drop-shadow-md italic">${char.desc}</div>
+                        <div class="text-amber-400 font-['Ma_Shan_Zheng'] text-4xl mt-4 border-l-2 border-amber-600 pl-6">${char.quote}</div>
+                    </div>
+                    <div class="col-span-5 flex flex-col justify-between py-2">
+                        <div class="space-y-10">
+                            <div><div class="text-white/30 text-[9px] mb-3 uppercase tracking-widest">Suit / Class</div><div class="text-white text-3xl font-black italic uppercase">${char.suit} / ${char.name.split(' ')[0]}</div></div>
+                            <div><div class="text-white/30 text-[9px] mb-3 uppercase tracking-widest">Heritage Rating</div><div class="flex gap-2 text-[#2dd4bf] mt-2">${Array(5).fill('<i data-lucide="star" class="w-4 h-4 fill-current"></i>').join('')}</div></div>
+                        </div>
+                        <div class="flex justify-end mt-auto"><div class="writing-mode-vertical bg-red-700 text-white p-5 font-['Ma_Shan_Zheng'] text-4xl border-2 border-amber-400 shadow-2xl tracking-[10px]">${char.cn}</div></div>
+                    </div>
+                </div>
+            `;
+            introContainer.appendChild(poster);
+        });
+
+        // 3. Generate Heritage Scroll
+        const galleryContainer = document.getElementById('gallery-content');
+        characters.forEach((char, index) => {
+            const row = document.createElement('div');
+            row.className = `flex items-center gap-16 w-full ${index % 2 !== 0 ? 'flex-row-reverse text-right' : ''}`;
+            row.innerHTML = `
+                <div class="relative group shrink-0">
+                    <div class="w-[440px] h-[600px] bg-white p-5 shadow-[20px_20px_50px_rgba(0,0,0,0.5)] border border-zinc-700 transition-all duration-700 transform group-hover:scale-[1.03] group-hover:rotate-0 group-hover:-translate-y-4 ${index % 2 === 0 ? 'rotate-[-1.5deg]' : 'rotate-[1.5deg]'}">
+                        <img src="${char.img}" class="w-full h-full object-cover brightness-110" onerror="this.src='https://via.placeholder.com/600?text=CHAR'">
+                        <div class="absolute top-10 right-10 writing-mode-vertical bg-red-700 text-white p-4 font-['Ma_Shan_Zheng'] text-3xl border-2 border-amber-400 shadow-lg">${char.cn}</div>
+                    </div>
+                </div>
+                <div class="flex-grow relative pt-10 text-white">
+                  <h3 class="text-6xl font-black mb-3 font-['Noto_Serif_SC'] tracking-tighter uppercase">${char.name}</h3>
+                  <span class="text-4xl font-['Zeyada'] text-red-500 block mb-10 italic font-bold">${char.cn} — Introduction</span>
+                  <div class="min-h-[250px] border-y-2 border-zinc-800 py-8 text-2xl leading-relaxed font-['Noto_Serif_SC'] font-light">${char.desc}</div>
+                </div>
+            `;
+            galleryContainer.appendChild(row);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
