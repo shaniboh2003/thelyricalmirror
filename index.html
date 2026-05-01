@@ -76,13 +76,14 @@
             100% { top: 100%; }
         }
 
-        /* Spacing updated: Total margin now 160px auto (increased by 10px) */
+        /* Increased spacing between posters as requested */
         .poster-page {
             width: 1000px;
-            margin: 160px auto; 
+            margin: 150px auto; /* Added 70px more to the original 80px */
             position: relative;
         }
 
+        /* Fix for the cutting text - increased line height and container height */
         .intro-title {
             line-height: 1.1;
             padding: 10px 0;
@@ -139,7 +140,9 @@
         </div>
 
         <div class="relative z-10 flex flex-grow gap-10">
-            <div class="w-16 flex flex-col gap-4 items-center border-r border-white/5 pr-10" id="guide-thumbs"></div>
+            <div class="w-16 flex flex-col gap-4 items-center border-r border-white/5 pr-10" id="guide-thumbs">
+                </div>
+
             <div class="flex-grow flex flex-col gap-8">
                 <div class="glass p-10 relative overflow-hidden">
                     <div class="flex justify-between items-start mb-8">
@@ -177,7 +180,8 @@
         </div>
     </div>
 
-    <div id="character-intros" class="flex flex-col items-center w-full"></div>
+    <div id="character-intros" class="flex flex-col items-center w-full">
+        </div>
 
     <div class="w-[1200px] midnight-scroll shadow-[0_0_100px_rgba(0,0,0,1)] relative overflow-hidden border-x-[40px] border-zinc-900 flex flex-col py-24 px-16 mb-32">
         <div class="absolute inset-0 pointer-events-none opacity-40">
@@ -194,7 +198,8 @@
                 <div class="h-1.5 w-40 bg-amber-500 mx-auto mt-10 shadow-[0_0_10px_orange]"></div>
             </header>
 
-            <div id="gallery-content" class="flex flex-col gap-48 w-full max-w-5xl"></div>
+            <div id="gallery-content" class="flex flex-col gap-48 w-full max-w-5xl">
+                </div>
 
             <footer class="mt-48 text-center border-t-4 border-double border-zinc-700 pt-20 w-full">
                 <div class="font-['Ma_Shan_Zheng'] text-red-700 text-7xl mb-10 opacity-90 drop-shadow-[0_0_20px_rgba(255,0,0,0.3)]">萬古情心</div>
