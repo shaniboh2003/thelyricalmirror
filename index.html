@@ -207,7 +207,7 @@
     <script>
         const characters = [
             { 
-                name: 'LIN DAIYU', cn: '林黛玉', role: 'The Fragile Rebel', suit: 'Tears', img: 'image_efb3f8.jpg',
+                name: 'LIN DAIYU', cn: '林黛玉', role: 'The Fragile Rebel', suit: 'Tears', img: 'lindaiyu.jpg',
                 traits: ['Flower Burial Hoe', 'Misted Jade Palette', 'Active Agency'],
                 quote: '尔今死去侬收葬，未卜侬身何日丧？',
                 desc: 'I am Lin Daiyu. This artifact captures my iconic "Burying of the Flowers." In this misted, pale jade lyrical space, I project my active agency onto a world that considers me only fragile. This act is not mere mourning; it is my choice to create a pure, poetic grave for beauty itself, ensuring it remains undefiled by the world’s corruption. My intense interiority is mirrored in the large negative space around me. I ask: "I bury you today, but who will bury me?" My fragility is my rebellion, a choice to live and die by my own poetic truth.'
@@ -306,7 +306,7 @@
                 <div class="relative z-10 w-full flex flex-col items-center mb-20">
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-[#2dd4bf]/15 blur-2xl opacity-50"></div>
-                        <div class="w-[550px] h-[760px] bg-white p-5 shadow-[0_40px_100px_rgba(0,0,0,0.5)] relative border border-white/10">
+                        <div class="w-[550px] h-[750px] bg-white p-5 shadow-[0_40px_100px_rgba(0,0,0,0.5)] relative border border-white/10">
                             <div class="scan-line"></div>
                             <img src="${char.img}" class="w-full h-full object-cover" alt="${char.name}" onerror="this.src='https://via.placeholder.com/600x800?text=CHAR_IMG'">
                             ${char.traits.map((trait, index) => `
@@ -345,7 +345,7 @@
             row.className = `flex items-center gap-16 w-full ${index % 2 !== 0 ? 'flex-row-reverse text-right' : ''}`;
             row.innerHTML = `
                 <div class="relative group shrink-0">
-                    <div class="w-[420px] h-[600px] bg-white p-5 shadow-[20px_20px_50px_rgba(0,0,0,0.5)] border border-zinc-700 transition-all duration-700 transform group-hover:scale-[1.03] group-hover:rotate-0 group-hover:-translate-y-4 ${index % 2 === 0 ? 'rotate-[-1.5deg]' : 'rotate-[1.5deg]'}">
+                    <div class="w-[440px] h-[600px] bg-white p-5 shadow-[20px_20px_50px_rgba(0,0,0,0.5)] border border-zinc-700 transition-all duration-700 transform group-hover:scale-[1.03] group-hover:rotate-0 group-hover:-translate-y-4 ${index % 2 === 0 ? 'rotate-[-1.5deg]' : 'rotate-[1.5deg]'}">
                         <img src="${char.img}" class="w-full h-full object-cover brightness-110" onerror="this.src='https://via.placeholder.com/600?text=CHAR'">
                         <div class="absolute top-10 right-10 writing-mode-vertical bg-red-700 text-white p-4 font-['Ma_Shan_Zheng'] text-3xl border-2 border-amber-400 shadow-lg">${char.cn}</div>
                     </div>
